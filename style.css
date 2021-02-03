@@ -1,0 +1,98 @@
+/* resets */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.view-cart-button {
+  background-color: rgba(3, 122, 122, 0.723);
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.header-nav-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.header-nav-li {
+  margin: 10px;
+}
+
+.header-link {
+  padding: 5px;
+  text-decoration: none;
+  color: rgb(98, 81, 51);
+}
+
+.company-information {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name {
+  color: #625133;
+  font-size: 35px;
+}
+
+.checkout-button {
+  background-color: black;
+  color: white;
+  width: 50%;
+  border-radius: 5px;
+  padding: 10px;
+}
+.heading2 {
+  color: #625133;
+}
+.coffee {
+}
+
+.tea {
+}
+
+.smoothie {
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.641);
+  margin-top: 20px;
+}
+
+.social-media-links {
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+}
+
+@media only screen and (min-width: 760px) {
+  .company-information {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .company {
+    flex: 1;
+  }
+  .cafe-ambience {
+    flex: 1;
+    /* object-fit: cover; */
+    width: 50%;
+  }
+  .checkout-button {
+    width: 100px;
+  }
+  .footer-nav {
+    margin-bottom: 0px;
+  }
+}

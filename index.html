@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript POS Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <a href="#">View Cart</a>
+      <nav class="top-nav">
+        <a href="#" class="view-cart-button">View Cart</a>
         <ul class="header-nav-list">
           <li class="header-nav-li">
-            <a href="#" class="header-link">Cofee</a>
+            <a href="#" class="header-link">Coffee</a>
           </li>
           <li class="header-nav-li">
             <a href="#" class="header-link">Tea</a>
@@ -25,33 +30,40 @@
     </header>
     <main>
       <section class="company-information">
-        <img src="" />
-        <h1 class="company">Cafe-Necessi-Tea.</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ullam
-          facere velit ea doloremque magni totam quo quis repudiandae officia
-          enim iure obcaecati, eius, iste nesciunt animi ex? Dicta, repellendus.
-        </p>
-        <button class="checkout-button">Checkout</button>
+        <img
+          src="assets/coffee-shop.jpg"
+          alt="Coffee Shop"
+          class="cafe-ambience"
+        />
+        <div class="company">
+          <h1 class="company-name">Cafe-Necessi-Tea</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam ullam
+            facere velit ea doloremque magni totam quo quis repudiandae officia
+            enim iure obcaecati, eius, iste nesciunt animi ex? Dicta,
+            repellendus.
+          </p>
+        </div>
       </section>
       <section class="coffee">
-        <h2>Coffee</h2>
+        <h2 class="heading2">Coffee</h2>
         <div></div>
       </section>
       <section class="tea">
-        <h2>Tea</h2>
+        <h2 class="heading2">Tea</h2>
         <div></div>
       </section>
       <section class="smoothie">
-        <h2>Smoothie</h2>
+        <h2 class="heading2">Smoothie</h2>
         <div></div>
       </section>
+      <button class="checkout-button">Checkout</button>
     </main>
-    <footer>
+    <footer class="footer-nav">
       <h3>Follow us</h3>
       <section>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
+        <a href="#" class="social-media-links">Instagram</a>
+        <a href="#" class="social-media-links">Facebook</a>
       </section>
     </footer>
     <script src="script.js"></script>
