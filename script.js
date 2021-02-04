@@ -96,6 +96,7 @@ let product = document.querySelectorAll(".product");
 let coffee = document.querySelector(".coffee");
 let tea = document.querySelector(".tea");
 let smoothie = document.querySelector(".smoothie");
+let addToCartBtn = document.querySelectorAll(".cart-button");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
@@ -109,6 +110,7 @@ const display = () => {
     card.classList.add("product");
     paragraph.classList.add("name-price");
     addButton.classList.add("cart-button");
+    // addButton.classList.add()
     image.classList.add("product-image");
     image.setAttribute("src", product.image);
     paragraph.textContent = `${product.name} $${product.price}`;
@@ -124,7 +126,7 @@ const display = () => {
     }
   });
 };
-// productContainer.addEventListener;
 display();
+
 console.log(productArray);
 console.dir(productArray);
