@@ -8,7 +8,7 @@
 let productArray = [
   {
     type: "coffee", // filter for groups on page
-    name: "aeropress",
+    name: "Aeropress",
     image: "assets/aeropress.jpg",
     price: 22,
   },
@@ -81,7 +81,7 @@ let productArray = [
   {
     type: "smoothie", // filter for groups on page
     name: "Ninja-Blender",
-    image: "assets/ninja-blender.jpg",
+    image: "assets/ninja-blender-2.jpg",
     price: 22,
   },
   {
@@ -96,3 +96,29 @@ let product = document.querySelectorAll(".product");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
+
+const display = () => {
+  productArray.forEach((product) => {
+    let card = document.createElement("div");
+    let paragraph = document.createElement("p");
+    let addButton = document.createElement("button");
+    let image = document.createElement("img");
+    card.classList.add("product");
+    paragraph.classList.add("name-price");
+    addButton.classList.add("cart-button");
+    image.classList.add("product-image");
+    image.setAttribute("src", product.image);
+    paragraph.textContent = `${product.name} $${product.price}`;
+    image.textContent = product.image;
+    addButton.textContent = "Add to Cart";
+    card.append(image, paragraph, addButton);
+    productContainer.append(card);
+  });
+  //   if (product.type === coffee) {
+  //   }
+};
+
+// productContainer.addEventListener;
+display();
+console.log(productArray);
+console.dir(productArray);

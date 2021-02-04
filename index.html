@@ -46,8 +46,16 @@
         </div>
       </section>
       <section class="product-container">
-        <h2 class="heading2">Coffee</h2>
-        <div class="product">
+        <div class="category-coffee">
+          <h2>Coffee</h2>
+        </div>
+        <div class="category-tea">
+          <h2>Tea</h2>
+        </div>
+        <div class="category-smoothie">
+          <h2>Smoothie</h2>
+        </div>
+        <!-- <div class="product">
           <img
             class="product-image"
             src="\assets\aeropress.jpg"
@@ -55,7 +63,7 @@
           />
           <p class="price">Aeropress  $22.00</span></p>
           <button>Add to Cart</button>
-        </div>
+        </div> -->
       </section>
       <section>
         <button class="checkout-button">Checkout</button>
@@ -63,31 +71,59 @@
           <form class="checkout-form">
             <button type="button" class="delete hide-form">X</button>
             <label for="choice">Please select a payment method</label>
-            <input type="radio" id="card" name="payment-method" value="card">
+            <input type="radio" id="card" name="payment-method" value="card" />
             <label for="cash">card</label>
-            <input type="radio" id="cash" name="payment-method" value="cash">
+            <input type="radio" id="cash" name="payment-method" value="cash" />
             <label for="cash">cash</label>
           </form>
           <form class="card-form">
             <label for="Name">Name</label>
-             <input  type="text"  id="name"  required  placeholder="Enter your name"  name="name"/>
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Enter your name"
+              name="name"
+            />
             <label for="cardnumber">Card Number</label>
-           <input  type="number"  id="cardnumber"  required  placeholder="Enter card number"  name="cardnumber"/>
-           <label for="expirydate">Expiry Date</label>
-           <input  type="date"  id="expirydate"  required  placeholder="Enter expiry date"  name="expirydate"/>
-           <label for="cvvnumber">CVV</label>
-           <input  type="number"  id="cvv"  required  placeholder="Enter CVV code"  name="cvvumber"/>
+            <input
+              type="number"
+              id="cardnumber"
+              required
+              placeholder="Enter card number"
+              name="cardnumber"
+            />
+            <label for="expirydate">Expiry Date</label>
+            <input
+              type="date"
+              id="expirydate"
+              required
+              placeholder="Enter expiry date"
+              name="expirydate"
+            />
+            <label for="cvvnumber">CVV</label>
+            <input
+              type="number"
+              id="cvv"
+              required
+              placeholder="Enter CVV code"
+              name="cvvumber"
+            />
 
-          <button>ADD</button>
+            <button>ADD</button>
           </form>
           <form class="cash-form">
             <label for="cash-amount">Enter the amount</label>
-            <input  type="number"  id="cash-amount"  required  placeholder="Enter the amount"  name="cash-amount"/>
-            
+            <input
+              type="number"
+              id="cash-amount"
+              required
+              placeholder="Enter the amount"
+              name="cash-amount"
+            />
           </form>
         </div>
-     
-    </section>
+      </section>
     </main>
     <footer class="footer-nav">
       <h3>Follow us</h3>
