@@ -110,12 +110,14 @@ const display = () => {
     card.classList.add("product");
     paragraph.classList.add("name-price");
     addButton.classList.add("cart-button");
+    addButton.id = `${product.price}`;
     // addButton.classList.add()
     image.classList.add("product-image");
     image.setAttribute("src", product.image);
     paragraph.textContent = `${product.name} $${product.price}`;
     image.textContent = product.image;
     addButton.textContent = "Add to Cart";
+
     card.append(image, paragraph, addButton);
     if (product.type === "coffee") {
       coffee.append(card);
@@ -124,6 +126,12 @@ const display = () => {
     } else if (product.type === "smoothie") {
       smoothie.append(card);
     }
+    addButton.addEventListener("click", (e) => {
+      console.log(e.path);
+      // if (e.target.product.contains(`${product.price}`)) {
+      //   total += `${product.price}`;
+      // }
+    });
   });
 };
 display();
