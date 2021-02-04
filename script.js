@@ -93,6 +93,9 @@ let productArray = [
 ];
 let productContainer = document.querySelector(".product-container");
 let product = document.querySelectorAll(".product");
+let coffee = document.querySelector(".coffee");
+let tea = document.querySelector(".tea");
+let smoothie = document.querySelector(".smoothie");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
@@ -112,12 +115,15 @@ const display = () => {
     image.textContent = product.image;
     addButton.textContent = "Add to Cart";
     card.append(image, paragraph, addButton);
-    productContainer.append(card);
+    if (product.type === "coffee") {
+      coffee.append(card);
+    } else if (product.type === "tea") {
+      tea.append(card);
+    } else if (product.type === "smoothie") {
+      smoothie.append(card);
+    }
   });
-  //   if (product.type === coffee) {
-  //   }
 };
-
 // productContainer.addEventListener;
 display();
 console.log(productArray);
