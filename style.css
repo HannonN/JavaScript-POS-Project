@@ -76,8 +76,19 @@ body {
   height: 400px;
 }
 
+.cart-button {
+  width: 50%;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(3, 122, 122, 0.723);
+  color: white;
+}
+
 .product-image {
-  object-fit: scale-down;
+  object-fit: cover;
+  height: auto;
+  width: 400px;
+  overflow: hidden;
 }
 
 .footer-nav {
@@ -107,6 +118,20 @@ body {
     /* object-fit: cover; */
     width: 50%;
   }
+  .product-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .product {
+    display: flex;
+    width: 400px;
+    height: 400px;
+  }
+
   .checkout-button {
     width: 100px;
   }
