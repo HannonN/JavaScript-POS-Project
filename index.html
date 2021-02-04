@@ -45,131 +45,49 @@
           </p>
         </div>
       </section>
-      <section id="coffee" class="products-container coffee">
+      <section class="product-container">
         <h2 class="heading2">Coffee</h2>
-        <div class="products">
+        <div class="product">
           <img
             class="product-image"
             src="\assets\aeropress.jpg"
             alt="aeropress"
           />
-          <p>Aeropress <span class="price">$22.00</span></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\chemex-other.jpg"
-            alt="chemex-other"
-          />
-          <p>Chemex</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\espresso.jpg"
-            alt="espresso"
-          />
-          <p>Espresso Double</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img class="product-image" src="\assets\chiapas.jpg" alt="chiapas" />
-          <p>Chiapas Roast</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\ethiopian.jpg"
-            alt="ethiopian"
-          />
-          <p></p>
+          <p class="price">Aeropress  $22.00</span></p>
           <button>Add to Cart</button>
         </div>
       </section>
-      <section id="tea" class="products-container tea">
-        <h2 class="heading2">Tea</h2>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\assam-tea.jpg"
-            alt="assam-tea"
-          />
-          <p></p>
-          <button>Add to Cart</button>
+      <section>
+        <button class="checkout-button">Checkout</button>
+        <div class="form-container">
+          <form class="checkout-form">
+            <button type="button" class="delete hide-form">X</button>
+            <label for="choice">Please select a payment method</label>
+            <input type="radio" id="card" name="payment-method" value="card">
+            <label for="cash">card</label>
+            <input type="radio" id="cash" name="payment-method" value="cash">
+            <label for="cash">cash</label>
+          </form>
+          <form class="card-form">
+            <label for="Name">Name</label>
+             <input  type="text"  id="name"  required  placeholder="Enter your name"  name="name"/>
+            <label for="cardnumber">Card Number</label>
+           <input  type="number"  id="cardnumber"  required  placeholder="Enter card number"  name="cardnumber"/>
+           <label for="expirydate">Expiry Date</label>
+           <input  type="date"  id="expirydate"  required  placeholder="Enter expiry date"  name="expirydate"/>
+           <label for="cvvnumber">CVV</label>
+           <input  type="number"  id="cvv"  required  placeholder="Enter CVV code"  name="cvvumber"/>
+
+          <button>ADD</button>
+          </form>
+          <form class="cash-form">
+            <label for="cash-amount">Enter the amount</label>
+            <input  type="number"  id="cash-amount"  required  placeholder="Enter the amount"  name="cash-amount"/>
+            
+          </form>
         </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\boba-tea.jpg"
-            alt="boba-tea"
-          />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\chamomile.jpg"
-            alt="chamomile"
-          />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="\assets\green-tea.jpg"
-            alt="green-tea"
-          />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img class="product-image" src="assets\teapot.jpg" alt="teapot" />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-      </section>
-      <section id="smoothie" class="products-container smoothie">
-        <h2 class="heading2">Smoothie</h2>
-        <div class="products">
-          <img class="product-image" src="assets\smoothie.jpg" alt="smoothie" />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img class="product-image" src="assets\juicer.jpg" alt="juicer" />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="assets\ninja-blender.png"
-            alt="ninja-blender"
-          />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img
-            class="product-image"
-            src="assets\whey-protein.jpg"
-            alt="whey-protein"
-          />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="products">
-          <img class="product-image" src="" alt="" />
-          <p></p>
-          <button>Add to Cart</button>
-        </div>
-      </section>
-      <button class="checkout-button">Checkout</button>
+     
+    </section>
     </main>
     <footer class="footer-nav">
       <h3>Follow us</h3>
