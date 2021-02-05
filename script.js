@@ -40,55 +40,55 @@ let productArray = [
     type: "tea", // filter for groups on page
     name: "Assam Tea",
     image: "assets/assam-tea.jpg",
-    price: 22,
+    price: 3.5,
   },
   {
     type: "tea", // filter for groups on page
     name: "Boba Tea",
     image: "assets/boba-tea.jpg",
-    price: 22,
+    price: 4,
   },
   {
     type: "tea", // filter for groups on page
     name: "Chamomile",
     image: "assets/chamomile.jpg",
-    price: 22,
+    price: 2,
   },
   {
     type: "tea", // filter for groups on page
     name: "Green Tea",
     image: "assets/green-tea.jpg",
-    price: 22,
+    price: 2,
   },
   {
     type: "tea", // filter for groups on page
     name: "Teapot",
     image: "assets/teapot.jpg",
-    price: 22,
+    price: 35,
   },
   {
     type: "smoothie", // filter for groups on page
     name: "Smoothie",
     image: "assets/smoothie.jpg",
-    price: 22,
+    price: 5,
   },
   {
     type: "smoothie", // filter for groups on page
     name: "Juicer",
     image: "assets/juicer.jpg",
-    price: 22,
+    price: 38,
   },
   {
     type: "smoothie", // filter for groups on page
     name: "Ninja-Blender",
     image: "assets/ninja-blender-2.jpg",
-    price: 22,
+    price: 43,
   },
   {
     type: "smoothie", // filter for groups on page
     name: "Whey Protein",
     image: "assets/whey-protein.jpg",
-    price: 22,
+    price: 18,
   },
 ];
 let myCartArray = [];
@@ -97,6 +97,9 @@ let product = document.querySelectorAll(".product");
 let coffee = document.querySelector(".coffee");
 let tea = document.querySelector(".tea");
 let smoothie = document.querySelector(".smoothie");
+let displayMyCart = document.querySelector(".display-my-cart");
+let checkOutButton = document.querySelector(".checkout-button");
+let formContainer = document.querySelector(".form-container");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
@@ -129,18 +132,46 @@ const display = () => {
 display();
 
 productContainer.addEventListener("click", (e) => {
-  // prime example of event delegation, =
+  e.preventDefault();
   if (e.target.classList.contains("cart-button")) {
-    // need to change the class if we want to add product to the cart if image is clicked
     let index = e.target.getAttribute("data-index");
     myCartArray.push(productArray[index].price, productArray[index].name);
-    console.log(index);
-    console.log(productArray[index].price);
     console.log(myCartArray);
   }
+  // const displayCartArray = (myCartArray) => {
+  //   myCartArray.forEach((item) => {
+  //     let cart = document.createElement("p");
+  //     cart.textContent = `${item.name}: ${item.price}`;
+});
+// displayCartArray();
+//   };
+// });
+
+checkOutButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  for (let i = 0; i < myCartArray.length; i += 2) {
+    subTotal += myCartArray[i];
+  }
+  finalTotal = subTotal * 1.06;
+  // console.log(subTotal);
+  // console.log(finalTotal);
 });
 
-myCartArray.addEventListener("click");
+checkOutButton.addEventListener("click", () => {
+  formContainer.style.display = "flex";
+});
 
-console.log(productArray);
-console.dir(productArray);
+let cardRadioButton = document.querySelector("#card");
+let cardForm = document.querySelector(".card-form");
+let cashRadioButton = document.querySelector("#cash");
+let cashForm = document.querySelector(".cash-form");
+
+cardRadioButton.addEventListener("click", () => {
+  cardForm.style.display = "flex";
+  cashForm.style.display = "none";
+});
+
+cashRadioButton.addEventListener("click", () => {
+  cashForm.style.display = "flex";
+  cardForm.style.display = "none";
+});
