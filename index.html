@@ -86,6 +86,7 @@
               required
               placeholder="Enter card number"
               name="cardnumber"
+              maxlength="16"
             />
             <label for="expirydate">Expiry Date</label>
             <input
@@ -102,9 +103,10 @@
               required
               placeholder="Enter CVV code"
               name="cvvumber"
+              maxlength="3"
             />
 
-            <button>ADD</button>
+            <button>Confirm Payment</button>
           </form>
           <form class="cash-form">
             <label for="cash-amount">Enter the amount</label>
@@ -114,9 +116,14 @@
               required
               placeholder="Enter the amount"
               name="cash-amount"
+              step="any"
             />
+            <button class="submit-payment">Submit Payment</button>
           </form>
         </div>
+      </section>
+      <section class="receipt-container">
+        <div class="actual-receipt"></div>
       </section>
     </main>
     <footer class="footer-nav">

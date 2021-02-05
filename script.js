@@ -162,7 +162,7 @@ checkOutButton.addEventListener("click", (e) => {
   finalTotal = subTotal * 1.06;
   tax *= subTotal;
   subtotalContainer.textContent = `Subtotal: $${subTotal}`;
-  taxContainer.textContent = `Tax: $${tax}`;
+  taxContainer.textContent = `Tax: $${tax.toFixed(2)}`;
   totalContainer.textContent = `Total: $${finalTotal.toFixed(2)}`;
   displayMyCart.append(subtotalContainer);
   displayMyCart.append(taxContainer);
@@ -173,6 +173,10 @@ let cardRadioButton = document.querySelector("#card");
 let cardForm = document.querySelector(".card-form");
 let cashRadioButton = document.querySelector("#cash");
 let cashForm = document.querySelector(".cash-form");
+let cashAmount = document.querySelector("#cash-amount");
+let submitPayment = document.querySelector(".submit-payment");
+let receipt = document.querySelector(".receipt-container");
+// trying to set the variable to the name in our radio buttons
 
 cardRadioButton.addEventListener("click", () => {
   cardForm.style.display = "flex";
@@ -182,4 +186,18 @@ cardRadioButton.addEventListener("click", () => {
 cashRadioButton.addEventListener("click", () => {
   cashForm.style.display = "flex";
   cardForm.style.display = "none";
+  // cashAmount.textContent = finalTotal; // trying to make the total amount appear in the label.
+  cashAmount.setAttribute("min", finalTotal);
 });
+
+submitPayment.addEventListener("click", (e) => {
+  e.preventDefault();
+  let snapshot = new FormData(cashForm);
+  let cashPayment = snapshot.get("cash-amount");
+  let change = cashPayment - finalTotal;
+  cashForm.append(`Your Change: $${change.toFixed(2)}`);
+  // displayReceipt(myCartArray,Subtotal,tax,finalTotal,`$('input[name="payment-method"]:checked').val()`);
+});
+
+console.log(`${'input[name="payment-method"]:checked'.val()}`);
+// const displayReceipt = (myCartArray,Subtotal,tax,finalTotal, payment,)=>{
