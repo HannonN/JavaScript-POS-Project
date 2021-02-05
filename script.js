@@ -103,6 +103,7 @@ let formContainer = document.querySelector(".form-container");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
+let tax = 0.06;
 
 const display = () => {
   productArray.forEach((product, index) => {
@@ -138,27 +139,34 @@ productContainer.addEventListener("click", (e) => {
     myCartArray.push(productArray[index].price, productArray[index].name);
     console.log(myCartArray);
   }
-  // const displayCartArray = (myCartArray) => {
-  //   myCartArray.forEach((item) => {
-  //     let cart = document.createElement("p");
-  //     cart.textContent = `${item.name}: ${item.price}`;
 });
-// displayCartArray();
-//   };
-// });
 
+let purchaseList = document.querySelector(".purchase-list");
 checkOutButton.addEventListener("click", (e) => {
   e.preventDefault();
+  formContainer.style.display = "flex";
+  let totalContainer = document.createElement("p");
+  let subtotalContainer = document.createElement("p");
+  let taxContainer = document.createElement("p");
+
+  //for (let i = 0; i < myCartArray.length; i += 2) {
+  // }
   for (let i = 0; i < myCartArray.length; i += 2) {
     subTotal += myCartArray[i];
   }
+  for (let j = 1; j < myCartArray.length; j += 2) {
+    let purchaseListItem = document.createElement("li");
+    purchaseListItem.textContent = `${myCartArray[j]}: $${myCartArray[j - 1]}`;
+    purchaseList.append(purchaseListItem);
+  }
   finalTotal = subTotal * 1.06;
-  // console.log(subTotal);
-  // console.log(finalTotal);
-});
-
-checkOutButton.addEventListener("click", () => {
-  formContainer.style.display = "flex";
+  tax *= subTotal;
+  subtotalContainer.textContent = `Subtotal: $${subTotal}`;
+  taxContainer.textContent = `Tax: $${tax}`;
+  totalContainer.textContent = `Total: $${finalTotal.toFixed(2)}`;
+  displayMyCart.append(subtotalContainer);
+  displayMyCart.append(taxContainer);
+  displayMyCart.append(totalContainer);
 });
 
 let cardRadioButton = document.querySelector("#card");
