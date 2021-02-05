@@ -1,4 +1,5 @@
 /* resets */
+
 body {
   margin: 0;
   padding: 0;
@@ -53,14 +54,6 @@ body {
 .heading2 {
   color: #625133;
 }
-/* .coffee {
-}
-
-.tea {
-}
-
-.smoothie {
-} */
 
 .product-container {
   width: 100vw;
@@ -111,7 +104,6 @@ body {
 .cash-form {
   display: none;
   flex-direction: column;
-  /* align-items: center; */
   width: 100%;
 }
 .card-form,
@@ -151,7 +143,15 @@ body {
   height: auto;
   padding: 10px;
   position: relative;
-  border-style: dashed 2px black;
+  border-style: dashed 4px black;
+}
+
+.delete {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 @media only screen and (min-width: 760px) {
