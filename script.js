@@ -175,7 +175,8 @@ let cashRadioButton = document.querySelector("#cash");
 let cashForm = document.querySelector(".cash-form");
 let cashAmount = document.querySelector("#cash-amount");
 let submitPayment = document.querySelector(".submit-payment");
-let receipt = document.querySelector(".receipt-container");
+let receiptContainer = document.querySelector(".receipt-container");
+let actualReceipt = document.querySelector(".actual-receipt");
 // trying to set the variable to the name in our radio buttons
 
 cardRadioButton.addEventListener("click", () => {
@@ -190,14 +191,83 @@ cashRadioButton.addEventListener("click", () => {
   cashAmount.setAttribute("min", finalTotal);
 });
 
-submitPayment.addEventListener("click", (e) => {
+// changed listerer to submit
+cashForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  receiptContainer.style.display = "flex";
+  receiptContainer.append(actualReceipt);
   let snapshot = new FormData(cashForm);
   let cashPayment = snapshot.get("cash-amount");
   let change = cashPayment - finalTotal;
   cashForm.append(`Your Change: $${change.toFixed(2)}`);
-  // displayReceipt(myCartArray,Subtotal,tax,finalTotal,`$('input[name="payment-method"]:checked').val()`);
+  let receiptTitle = document.createElement("h3");
+  let itemTitle = document.createElement("p");
+  let thankYouMessage = document.createElement("p");
+  let tenderMethod = document.createElement("p");
+  let receiptSubtotal = document.createElement("p");
+  let receiptTax = document.createElement("p");
+  let receiptFinalTotal = document.createElement("p");
+  receiptSubtotal.textContent = `Subtotal: $${subTotal}`;
+  receiptTax.textContent = `Tax: $${tax.toFixed(2)}`;
+  receiptFinalTotal.textContent = `Total: $${finalTotal.toFixed(2)}`;
+  tenderMethod.textContent = "Payment type: Cash";
+  itemTitle.textContent = "Items:";
+  receiptTitle.textContent = "Cafe Necessitea";
+  thankYouMessage.textContent =
+    "Thanks for shopping with us! Have a great day!";
+  actualReceipt.append(receiptTitle);
+  actualReceipt.append(itemTitle);
+  actualReceipt.append(purchaseList);
+  actualReceipt.append(receiptSubtotal);
+  actualReceipt.append(receiptTax);
+  actualReceipt.append(receiptFinalTotal);
+  actualReceipt.append(tenderMethod);
+  actualReceipt.append(`Your change: $${change.toFixed(2)}`);
+  actualReceipt.append(thankYouMessage);
 });
 
-console.log(`${'input[name="payment-method"]:checked'.val()}`);
-// const displayReceipt = (myCartArray,Subtotal,tax,finalTotal, payment,)=>{
+cardForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  receiptContainer.style.display = "flex";
+  receiptContainer.append(actualReceipt);
+  let receiptTitle = document.createElement("h3");
+  let itemTitle = document.createElement("p");
+  let thankYouMessage = document.createElement("p");
+  let tenderMethod = document.createElement("p");
+  let receiptSubtotal = document.createElement("p");
+  let receiptTax = document.createElement("p");
+  let receiptFinalTotal = document.createElement("p");
+  receiptSubtotal.textContent = `Subtotal: $${subTotal}`;
+  receiptTax.textContent = `Tax: $${tax.toFixed(2)}`;
+  receiptFinalTotal.textContent = `Total: $${finalTotal.toFixed(2)}`;
+  tenderMethod.textContent = "Payment type: Card";
+  itemTitle.textContent = "Items:";
+  receiptTitle.textContent = "Cafe Necessitea";
+  thankYouMessage.textContent =
+    "Thanks for shopping with us! Have a great day!";
+  actualReceipt.append(receiptTitle);
+  actualReceipt.append(itemTitle);
+  actualReceipt.append(purchaseList);
+  actualReceipt.append(receiptSubtotal);
+  actualReceipt.append(receiptTax);
+  actualReceipt.append(receiptFinalTotal);
+  actualReceipt.append(tenderMethod);
+  actualReceipt.append(thankYouMessage);
+});
+
+let deleteReceipt = document.querySelector(".delete");
+let checkoutForm = document.querySelector(".checkout-form");
+deleteReceipt.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete")) {
+    receiptContainer.style.display = "none";
+    displayMyCart.innerHTML = "";
+    checkoutForm.reset();
+    cashForm.reset();
+    cardForm.reset();
+    formContainer.reset();
+    myCartArray.reset();
+    displayMyCart.reset();
+    receiptContainer.reset();
+    totalContainer.reset();
+  }
+});
