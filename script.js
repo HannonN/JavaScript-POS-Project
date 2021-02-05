@@ -91,18 +91,18 @@ let productArray = [
     price: 22,
   },
 ];
+let myCartArray = [];
 let productContainer = document.querySelector(".product-container");
 let product = document.querySelectorAll(".product");
 let coffee = document.querySelector(".coffee");
 let tea = document.querySelector(".tea");
 let smoothie = document.querySelector(".smoothie");
-let addToCartBtn = document.querySelectorAll(".cart-button");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
 
 const display = () => {
-  productArray.forEach((product) => {
+  productArray.forEach((product, index) => {
     let card = document.createElement("div");
     let paragraph = document.createElement("p");
     let addButton = document.createElement("button");
@@ -110,14 +110,12 @@ const display = () => {
     card.classList.add("product");
     paragraph.classList.add("name-price");
     addButton.classList.add("cart-button");
-    addButton.id = `${product.price}`;
-    // addButton.classList.add()
+    addButton.setAttribute("data-index", index);
     image.classList.add("product-image");
     image.setAttribute("src", product.image);
     paragraph.textContent = `${product.name} $${product.price}`;
     image.textContent = product.image;
     addButton.textContent = "Add to Cart";
-
     card.append(image, paragraph, addButton);
     if (product.type === "coffee") {
       coffee.append(card);
@@ -126,15 +124,23 @@ const display = () => {
     } else if (product.type === "smoothie") {
       smoothie.append(card);
     }
-    addButton.addEventListener("click", (e) => {
-      console.log(e.path);
-      // if (e.target.product.contains(`${product.price}`)) {
-      //   total += `${product.price}`;
-      // }
-    });
   });
 };
 display();
+
+productContainer.addEventListener("click", (e) => {
+  // prime example of event delegation, =
+  if (e.target.classList.contains("cart-button")) {
+    // need to change the class if we want to add product to the cart if image is clicked
+    let index = e.target.getAttribute("data-index");
+    myCartArray.push(productArray[index].price, productArray[index].name);
+    console.log(index);
+    console.log(productArray[index].price);
+    console.log(myCartArray);
+  }
+});
+
+myCartArray.addEventListener("click");
 
 console.log(productArray);
 console.dir(productArray);
