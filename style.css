@@ -13,12 +13,14 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 10px;
 }
 .view-cart-button {
   background-color: rgba(3, 122, 122, 0.723);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
   text-decoration: none;
+  text-align: center;
   color: white;
 }
 
@@ -37,9 +39,18 @@ html {
   color: rgb(98, 81, 51);
 }
 
+.company {
+  padding: 5%;
+}
+
 .company-information {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.cafe-ambience {
+  width: 100%;
 }
 
 .company-name {
