@@ -15,7 +15,7 @@ html {
   align-items: center;
   padding: 5px 10px;
 }
-.view-cart-button {
+.to-checkout-button {
   background-color: rgba(3, 122, 122, 0.723);
   padding: 5px 10px;
   border-radius: 10px;
