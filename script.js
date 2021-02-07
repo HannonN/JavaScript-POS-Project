@@ -138,6 +138,8 @@ productContainer.addEventListener("click", (e) => {
     let index = e.target.getAttribute("data-index");
     myCartArray.push(productArray[index].price, productArray[index].name);
     console.log(myCartArray);
+    e.target.textContent = "Item Added to Cart!";
+    e.target.style.backgroundColor = "#625133";
   }
 });
 

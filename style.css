@@ -6,16 +6,21 @@ body {
   background-color: white;
   font-family: "Roboto", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 .top-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 10px;
 }
-.view-cart-button {
+.to-checkout-button {
   background-color: rgba(3, 122, 122, 0.723);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
   text-decoration: none;
+  text-align: center;
   color: white;
 }
 
@@ -34,9 +39,18 @@ body {
   color: rgb(98, 81, 51);
 }
 
+.company {
+  padding: 5%;
+}
+
 .company-information {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.cafe-ambience {
+  width: 100%;
 }
 
 .company-name {
@@ -67,15 +81,20 @@ body {
   flex-direction: column;
   width: 400px;
   height: 400px;
-  /* border-style: solid 2px #625133; */
 }
 
 .cart-button {
   width: 50%;
   margin: 5px;
-  padding: 5px;
+  padding: 10px 5px;
   background-color: rgba(3, 122, 122, 0.723);
   color: white;
+  border: 0px;
+  border-radius: 10px;
+}
+
+.cart-button:hover {
+  background-color: rgba(3, 122, 122, 1);
 }
 
 .product-image {
