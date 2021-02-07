@@ -186,21 +186,29 @@ html {
     width: 50%;
   }
   .product-container {
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
+    object-fit: scale-down;
+    /* flex-wrap: wrap; */
+    /* padding: 20px; */
   }
 
   .product {
     display: flex;
     flex-direction: row;
+    align-items: center;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
+    /* width: 35%; // was 400px; */
+    /* height: 35%; // was 400px; */
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px black;
   }
-
+  .smoothie {
+    margin-top: 0px;
+  }
   .checkout-button {
     width: 100px;
   }
