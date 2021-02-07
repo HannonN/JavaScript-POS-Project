@@ -177,6 +177,8 @@ html {
   .company-information {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100vw;
   }
   .company {
     flex: 1;
@@ -198,7 +200,7 @@ html {
   .product {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     /* width: 35%; // was 400px; */
     /* height: 35%; // was 400px; */
