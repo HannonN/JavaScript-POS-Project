@@ -262,14 +262,16 @@ let checkoutForm = document.querySelector(".checkout-form");
 deleteReceipt.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     receiptContainer.style.display = "none";
-    displayMyCart.innerHTML = "";
-    checkoutForm.reset();
-    cashForm.reset();
-    cardForm.reset();
-    formContainer.reset();
-    myCartArray.reset();
-    displayMyCart.reset();
-    receiptContainer.reset();
-    totalContainer.reset();
+    location.reload();
+    // formContainer.innerHTML = "";
+    // displayMyCart.innerHTML = "";
+    // checkoutForm.reset();
+    // cashForm.reset();
+    // cardForm.reset();
+    // // formContainer.reset();
+    // // myCartArray.reset();
+    // displayMyCart.reset();
+    // receiptContainer.reset();
+    // totalContainer.reset();
   }
 });
