@@ -191,7 +191,7 @@ html {
     /* width: 100vw; */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     object-fit: scale-down;
     /* flex-wrap: wrap; */
     /* padding: 20px; */
