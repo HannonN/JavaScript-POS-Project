@@ -86,7 +86,6 @@ main {
   flex-direction: column;
   width: 400px;
   height: 400px;
-  /*width: 66%;*/
 }
 
 .cart-button {
@@ -106,9 +105,7 @@ main {
 .product-image {
   object-fit: cover;
   height: auto;
-  /*width: 400px;*/
   max-width: 100%;
-  /*overflow: hidden;*/
 }
 
 .footer-nav {
@@ -141,6 +138,8 @@ main {
 }
 
 .checkout-form {
+  display: flex;
+  flex-direction: column;
   background-color: black;
   color: white;
   width: 42%;
@@ -150,11 +149,11 @@ main {
 #checkout {
   margin-left: 20px;
 }
-/*.purchase-list {
+.purchase-list-border {
   border: 1px solid black;
   width: 30%;
   padding: 10px, 0px;
-}*/
+}
 .receipt-container {
   position: fixed;
   left: 0;
@@ -217,17 +216,22 @@ main {
     object-fit: scale-down;
   }
 
+  .product-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+
   .product {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    flex-wrap: wrap;
-    /* width: 35%; // was 400px; */
-    /* height: 35%; // was 400px; */
     margin: 10px;
     padding: 10px;
     border: solid 2px black;
-    width: 66%;
+    width: 75%;
+    height: auto;
   }
   .smoothie {
     margin-top: 0px;

@@ -100,6 +100,17 @@ let smoothie = document.querySelector(".smoothie");
 let displayMyCart = document.querySelector(".display-my-cart");
 let checkOutButton = document.querySelector(".checkout-button");
 let formContainer = document.querySelector(".form-container");
+let purchaseList = document.querySelector(".purchase-list");
+let cardRadioButton = document.querySelector("#card");
+let cardForm = document.querySelector(".card-form");
+let cashRadioButton = document.querySelector("#cash");
+let cashForm = document.querySelector(".cash-form");
+let cashAmount = document.querySelector("#cash-amount");
+let submitPayment = document.querySelector(".submit-payment");
+let receiptContainer = document.querySelector(".receipt-container");
+let actualReceipt = document.querySelector(".actual-receipt");
+let deleteReceipt = document.querySelector(".delete");
+let checkoutForm = document.querySelector(".checkout-form");
 let cartItems = 0;
 let subTotal = 0;
 let finalTotal = 0;
@@ -143,16 +154,13 @@ productContainer.addEventListener("click", (e) => {
   }
 });
 
-let purchaseList = document.querySelector(".purchase-list");
 checkOutButton.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.style.display = "flex";
   let totalContainer = document.createElement("p");
   let subtotalContainer = document.createElement("p");
   let taxContainer = document.createElement("p");
-  purchaseList.style.border = "1px solid black";
-  //for (let i = 0; i < myCartArray.length; i += 2) {
-  // }
+  purchaseList.classList.add("purchase-list-border");
   for (let i = 0; i < myCartArray.length; i += 2) {
     subTotal += myCartArray[i];
   }
@@ -174,16 +182,6 @@ checkOutButton.addEventListener("click", (e) => {
   checkOutButton.disabled = true;
 });
 
-let cardRadioButton = document.querySelector("#card");
-let cardForm = document.querySelector(".card-form");
-let cashRadioButton = document.querySelector("#cash");
-let cashForm = document.querySelector(".cash-form");
-let cashAmount = document.querySelector("#cash-amount");
-let submitPayment = document.querySelector(".submit-payment");
-let receiptContainer = document.querySelector(".receipt-container");
-let actualReceipt = document.querySelector(".actual-receipt");
-// trying to set the variable to the name in our radio buttons
-
 cardRadioButton.addEventListener("click", () => {
   cardForm.style.display = "flex";
   cashForm.style.display = "none";
@@ -192,11 +190,9 @@ cardRadioButton.addEventListener("click", () => {
 cashRadioButton.addEventListener("click", () => {
   cashForm.style.display = "flex";
   cardForm.style.display = "none";
-  // cashAmount.textContent = finalTotal; // trying to make the total amount appear in the label.
   cashAmount.setAttribute("min", finalTotal);
 });
 
-// changed listerer to submit
 cashForm.addEventListener("submit", (e) => {
   e.preventDefault();
   receiptContainer.style.display = "flex";
@@ -247,7 +243,7 @@ cardForm.addEventListener("submit", (e) => {
   receiptFinalTotal.textContent = `Total: $${finalTotal.toFixed(2)}`;
   tenderMethod.textContent = "Payment type: Card";
   itemTitle.textContent = "Items:";
-  receiptTitle.textContent = "Cafe Necessitea";
+  receiptTitle.textContent = "Cafe Necessi Tea";
   thankYouMessage.textContent =
     "Thanks for shopping with us! Have a great day!";
   actualReceipt.append(receiptTitle);
@@ -260,12 +256,10 @@ cardForm.addEventListener("submit", (e) => {
   actualReceipt.append(thankYouMessage);
 });
 
-let deleteReceipt = document.querySelector(".delete");
-let checkoutForm = document.querySelector(".checkout-form");
 deleteReceipt.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     receiptContainer.style.display = "none";
-    location.reload();
+    location.reload(); //highlight of the weekend***
     // formContainer.innerHTML = "";
     // displayMyCart.innerHTML = "";
     // checkoutForm.reset();

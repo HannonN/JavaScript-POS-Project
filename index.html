@@ -46,13 +46,13 @@
         </div>
       </section>
       <section class="product-container">
-        <div id="coffee" class="coffee">
+        <div id="coffee" class="coffee product-column">
           <h2 class="product-headings">Coffee</h2>
         </div>
-        <div id="tea" class="tea">
+        <div id="tea" class="tea product-column">
           <h2 class="product-headings">Tea</h2>
         </div>
-        <div id="smoothie" class="smoothie">
+        <div id="smoothie" class="smoothie product-column">
           <h2 class="product-headings">Smoothie</h2>
         </div>
       </section>
@@ -63,7 +63,7 @@
         </div>
         <div class="form-container">
           <form class="checkout-form">
-            <label for="choice">Please select a payment method</label>
+            <label for="choice">Please select a payment method:</label>
             <input type="radio" id="card" name="payment-method" value="card" />
             <label for="cash">card</label>
             <input type="radio" id="cash" name="payment-method" value="cash" />
@@ -82,10 +82,10 @@
             <input
               type="number"
               id="cardnumber"
-              required
               placeholder="Enter card number"
               name="cardnumber"
-              maxlength="16"
+              pattern="[0-9]{14,16}"
+              required
             />
             <label for="expirydate">Expiry Date</label>
             <input
