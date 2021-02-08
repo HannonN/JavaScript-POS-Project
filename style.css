@@ -9,6 +9,9 @@ body {
 html {
   scroll-behavior: smooth;
 }
+main {
+  overflow: hidden;
+}
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -62,13 +65,15 @@ html {
   background-color: black;
   color: white;
   width: 50%;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
 }
 .heading2 {
   color: #625133;
 }
-
+.product-headings {
+  margin-left: 10px;
+}
 .product-container {
   width: 100vw;
   display: flex;
@@ -81,6 +86,7 @@ html {
   flex-direction: column;
   width: 400px;
   height: 400px;
+  /*width: 66%;*/
 }
 
 .cart-button {
@@ -100,8 +106,9 @@ html {
 .product-image {
   object-fit: cover;
   height: auto;
-  width: 400px;
-  overflow: hidden;
+  /*width: 400px;*/
+  max-width: 100%;
+  /*overflow: hidden;*/
 }
 
 .footer-nav {
@@ -140,7 +147,14 @@ html {
   margin: 20px;
   padding: 10px;
 }
-
+#checkout {
+  margin-left: 20px;
+}
+/*.purchase-list {
+  border: 1px solid black;
+  width: 30%;
+  padding: 10px, 0px;
+}*/
 .receipt-container {
   position: fixed;
   left: 0;
@@ -171,6 +185,9 @@ html {
   top: -5px;
   border-radius: 50%;
   padding: 5px;
+}
+.footer-heading {
+  margin-left: 20px;
 }
 
 @media only screen and (min-width: 760px) {
@@ -210,6 +227,7 @@ html {
     margin: 10px;
     padding: 10px;
     border: solid 2px black;
+    width: 66%;
   }
   .smoothie {
     margin-top: 0px;
