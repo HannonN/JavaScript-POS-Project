@@ -150,7 +150,7 @@ checkOutButton.addEventListener("click", (e) => {
   let totalContainer = document.createElement("p");
   let subtotalContainer = document.createElement("p");
   let taxContainer = document.createElement("p");
-
+  purchaseList.style.border = "1px solid black";
   //for (let i = 0; i < myCartArray.length; i += 2) {
   // }
   for (let i = 0; i < myCartArray.length; i += 2) {
@@ -169,6 +169,9 @@ checkOutButton.addEventListener("click", (e) => {
   displayMyCart.append(subtotalContainer);
   displayMyCart.append(taxContainer);
   displayMyCart.append(totalContainer);
+  checkOutButton.style.backgroundColor = "#625133";
+  checkOutButton.textContent = "All Set!";
+  checkOutButton.disabled = true;
 });
 
 let cardRadioButton = document.querySelector("#card");
